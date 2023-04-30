@@ -1,22 +1,22 @@
 import React, { useContext } from 'react';
 import WheyContext from '../Context/WheyContext';
+import WheyForm from '../Components/WheyForm';
 
 function MainPage() {
-  const { test, setTest } = useContext(WheyContext);
+  const { comparison, setComparison } = useContext(WheyContext);
 
-  const testmaker = () => {
-    if (test) {
-      setTest(false);
-    } else {
-      setTest(true);
-    }
-  }
 
   return (
     <main>
-      <button onClick={ testmaker }>
-        { `teste ${ test }` }
-      </button>
+      <div className="main-view">
+        {/* header */}
+        <h1>WheyCulator</h1>
+        <p>Quer saber quanto custa a dose do seu whey? Qual a concentração dele? Saber qual o valor real da proteína? Comparar com outras marcas? É para isso que estamos aqui, para facilitar sua decisão e a sua vida!</p>
+      </div>
+      {/* descrições e informações */}
+      {/* formulario de informações da proteína, usar o estado de comparação para renderizar ou não o segundo formulário */}
+      <WheyForm />
+      {/* footer */}
     </main>
   );
 }
