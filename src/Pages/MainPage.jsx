@@ -5,6 +5,11 @@ import WheyForm from '../Components/WheyForm';
 function MainPage() {
   const { comparison, setComparison } = useContext(WheyContext);
 
+  const HandleComp = (event) => {
+    event.preventDefault();
+    setComparison(true);
+  }
+
 
   return (
     <main>
@@ -15,7 +20,14 @@ function MainPage() {
       </div>
       {/* descrições e informações */}
       {/* formulario de informações da proteína, usar o estado de comparação para renderizar ou não o segundo formulário */}
-      <WheyForm />
+      <WheyForm ind="0" />
+      {
+        comparison ? 
+          <WheyForm ind="1" /> :
+          <button onClick={ HandleComp }>
+            Comparar
+          </button>
+      }
       {/* footer */}
     </main>
   );

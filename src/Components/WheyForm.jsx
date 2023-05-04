@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import WheyContext from "../Context/WheyContext";
 
-function WheyForm() {
-  const { 
+function WheyForm(props) {
+  const {
+    setComparison,
     brand,
     setBrand,
     weight,
@@ -24,51 +25,70 @@ function WheyForm() {
     getProteinConcentration,
     proteinConcentration,
     getProteinPrice,
-    proteinPrice
+    proteinPrice,
+    updateArray
   } = useContext(WheyContext);
+
+  const { ind } = props;
+  const i = Number(ind);
 
   const handleBrand = (event) => {
     const { value } = event.target;
-    setBrand(value);
+    const newValue = updateArray(brand, value, i);
+    setBrand(newValue);
   }
 
   const handleWeight = (event) => {
     const { value } = event.target;
-    setWeight(value);
+    const newValue = updateArray(weight, value, i);
+    setWeight(newValue);
   }
 
   const handleServing = (event) => {
     const { value } = event.target;
-    setServing(value);
+    const newValue = updateArray(serving, value, i);
+    setServing(newValue);
   }
 
   const handleProtein = (event) => {
     const { value } = event.target;
-    setProtein(value);
+    const newValue = updateArray(protein, value, i);
+    setProtein(newValue);
   }
 
   const handlePrice = (event) => {
     const { value } = event.target;
-    setPrice(value);
+    const newValue = updateArray(price, value, i);
+    setPrice(newValue);
+  }
+
+  const closeForm = (event) => {
+    event.preventDefault();
+    setComparison(false);
   }
 
   const handleCalc = (event) => {
     event.preventDefault();
     setCalculate(true);
-    getServingPrice(weight, serving, price);
-    getServingQuant(weight, serving);
-    getTotalProtein(weight, serving, protein);
-    getProteinConcentration(serving, protein);
-    getProteinPrice(weight, serving, protein, price);
+    getServingPrice(weight[i], serving[i], price[i], i);
+    getServingQuant(weight[i], serving[i], i);
+    getTotalProtein(weight[i], serving[i], protein[i], i);
+    getProteinConcentration(serving[i], protein[i], i);
+    getProteinPrice(weight[i], serving[i], protein[i], price[i], i);
   }
 
   return (
     <form>
+      { i === 1 &&
+        <button onClick={ closeForm }>
+          X
+        </button>
+      }
       <label>
         Marca:
         <input 
           type="text"
-          value={ brand }
+          value={ brand[i] }
           onChange={ handleBrand }
         />
       </label>
@@ -76,7 +96,7 @@ function WheyForm() {
         Quantidade em gramas:
         <input
           type="number"
-          value={ weight }
+          value={ weight[i] }
           onChange={ handleWeight }
         />
       </label>
@@ -84,7 +104,7 @@ function WheyForm() {
         Porção em gramas:
         <input
           type="number"
-          value={ serving }
+          value={ serving[i] }
           onChange={ handleServing }
         />
       </label>
@@ -92,7 +112,7 @@ function WheyForm() {
         Proteína por porção:
         <input
           type="number"
-          value={ protein }
+          value={ protein[i] }
           onChange={ handleProtein }
         />
       </label>
@@ -100,7 +120,7 @@ function WheyForm() {
         Preço:
         <input
           type="number"
-          value={ price }
+          value={ price[i] }
           onChange={ handlePrice }
         />
       </label>
@@ -110,11 +130,11 @@ function WheyForm() {
       {
         calculate && (
           <div>
-            <p>{ `Informações do whey ${ brand }:` }</p>
-            <p>{ `Rende ${ servingQuant } porções por embalagem` }</p>
-            <p>{ `Preço por porção: R$ ${ servingPrice }` }</p>
-            <p>{ `Cada embalagem possui ${ totalProtein }g de proteína, tendo assim uma concentração de ${ proteinConcentration }%` }</p>
-            <p>{ `Você paga R$ ${proteinPrice} só por a  proteína do produto` }</p>
+            <p>{ `Informações do whey ${ brand[i] }:` }</p>
+            <p>{ `Rende ${ servingQuant[i] } porções por embalagem` }</p>
+            <p>{ `Preço por porção: R$ ${ servingPrice[i] }` }</p>
+            <p>{ `Cada embalagem possui ${ totalProtein[i] }g de proteína, tendo assim uma concentração de ${ proteinConcentration[i] }%` }</p>
+            <p>{ `Você paga R$ ${proteinPrice[i]} só por a  proteína do produto` }</p>
           </div>
         )
       }

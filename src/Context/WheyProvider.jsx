@@ -3,42 +3,53 @@ import WheyContext from "./WheyContext";
 
 function WheyProvider({ children }) {
   const [comparison, setComparison] = useState(false);
-  const [brand, setBrand] = useState("");
-  const [weight, setWeight] = useState();
-  const [serving, setServing] = useState();
-  const [protein, setProtein] = useState();
-  const [price, setPrice] = useState();
+  const [brand, setBrand] = useState(["", ""]);
+  const [weight, setWeight] = useState(["", ""]);
+  const [serving, setServing] = useState(["", ""]);
+  const [protein, setProtein] = useState(["", ""]);
+  const [price, setPrice] = useState(["", ""]);
   const [calculate, setCalculate] = useState(false);
-  const [servingPrice, setServingPrice] = useState();
-  const [servingQuant, setServingQuant] = useState();
-  const [totalProtein, setTotalProtein] = useState();
-  const [proteinConcentration, setProteinConcentration] = useState();
-  const [proteinPrice, setProteinPrice] = useState();
+  const [servingPrice, setServingPrice] = useState(["", ""]);
+  const [servingQuant, setServingQuant] = useState(["", ""]);
+  const [totalProtein, setTotalProtein] = useState(["", ""]);
+  const [proteinConcentration, setProteinConcentration] = useState(["", ""]);
+  const [proteinPrice, setProteinPrice] = useState(["", ""]);
 
-  const getServingPrice = (weight, serving, price) => {
+  const updateArray = (array, value, index) => {
+    let dumArr = array.slice();
+    dumArr[index] = value;
+    return dumArr;
+  }
+
+  const getServingPrice = (weight, serving, price, index) => {
     const SP = (price * serving) / weight;
-    setServingPrice(SP.toFixed(2));
+    const newValue = updateArray(servingPrice, SP.toFixed(2), index);
+    setServingPrice(newValue);
   }
 
-  const getServingQuant = (weight, serving) => {
+  const getServingQuant = (weight, serving, index) => {
     const SQ = weight / serving;
-    setServingQuant(Math.round(SQ));
+    const newValue = updateArray(servingQuant, Math.round(SQ), index);
+    setServingQuant(newValue);
   }
 
-  const getTotalProtein = (weight, serving, protein) => {
+  const getTotalProtein = (weight, serving, protein, index) => {
     const TP = (weight / serving) * protein;
-    setTotalProtein(Math.round(TP));
+    const newValue = updateArray(totalProtein, Math.round(TP), index);
+    setTotalProtein(newValue);
   }
 
-  const getProteinConcentration = (serving, protein) => {
+  const getProteinConcentration = (serving, protein, index) => {
     const PC = (protein * 100) / serving;
-    setProteinConcentration(PC.toFixed(1));
+    const newValue = updateArray(proteinConcentration, PC.toFixed(1), index);
+    setProteinConcentration(newValue);
   }
 
-  const getProteinPrice = (weight, serving, protein, price) => {
+  const getProteinPrice = (weight, serving, protein, price, index) => {
     const TP = (weight / serving) * protein;
     const PP = (Math.round(TP) * price) / weight;
-    setProteinPrice(PP.toFixed(2));
+    const newValue = updateArray(proteinPrice, PP.toFixed(2), index);
+    setProteinPrice(newValue);
   }
 
   const WheyValue = {
@@ -65,7 +76,8 @@ function WheyProvider({ children }) {
     getProteinConcentration,
     proteinConcentration,
     getProteinPrice,
-    proteinPrice
+    proteinPrice,
+    updateArray
   }
 
   return (
