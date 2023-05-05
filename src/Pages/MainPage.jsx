@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import WheyContext from '../Context/WheyContext';
 import WheyForm from '../Components/WheyForm';
+import CalcButton from '../Components/CalcButton';
 
 function MainPage() {
-  const { comparison, setComparison } = useContext(WheyContext);
+  const { comparison, setComparison, resetForm } = useContext(WheyContext);
 
   const HandleComp = (event) => {
     event.preventDefault();
+    resetForm(event);
     setComparison(true);
   }
-
 
   return (
     <main>
@@ -23,7 +24,10 @@ function MainPage() {
       <WheyForm ind="0" />
       {
         comparison ? 
-          <WheyForm ind="1" /> :
+          <div>
+            <WheyForm ind="1" />
+            <CalcButton ind={["0", "1"]} />
+          </div> :
           <button onClick={ HandleComp }>
             Comparar
           </button>

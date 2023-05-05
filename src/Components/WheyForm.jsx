@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import WheyContext from "../Context/WheyContext";
+import CalcButton from "./CalcButton";
 
 function WheyForm(props) {
   const {
+    comparison,
     setComparison,
     brand,
     setBrand,
@@ -15,16 +17,10 @@ function WheyForm(props) {
     price,
     setPrice,
     calculate,
-    setCalculate,
-    getServingPrice,
     servingPrice,
-    getServingQuant,
     servingQuant,
-    getTotalProtein,
     totalProtein,
-    getProteinConcentration,
     proteinConcentration,
-    getProteinPrice,
     proteinPrice,
     updateArray
   } = useContext(WheyContext);
@@ -67,16 +63,6 @@ function WheyForm(props) {
     setComparison(false);
   }
 
-  const handleCalc = (event) => {
-    event.preventDefault();
-    setCalculate(true);
-    getServingPrice(weight[i], serving[i], price[i], i);
-    getServingQuant(weight[i], serving[i], i);
-    getTotalProtein(weight[i], serving[i], protein[i], i);
-    getProteinConcentration(serving[i], protein[i], i);
-    getProteinPrice(weight[i], serving[i], protein[i], price[i], i);
-  }
-
   return (
     <form>
       { i === 1 &&
@@ -90,6 +76,7 @@ function WheyForm(props) {
           type="text"
           value={ brand[i] }
           onChange={ handleBrand }
+          required
         />
       </label>
       <label>
@@ -98,6 +85,7 @@ function WheyForm(props) {
           type="number"
           value={ weight[i] }
           onChange={ handleWeight }
+          required
         />
       </label>
       <label>
@@ -106,6 +94,7 @@ function WheyForm(props) {
           type="number"
           value={ serving[i] }
           onChange={ handleServing }
+          required
         />
       </label>
       <label>
@@ -114,6 +103,7 @@ function WheyForm(props) {
           type="number"
           value={ protein[i] }
           onChange={ handleProtein }
+          required
         />
       </label>
       <label>
@@ -122,11 +112,10 @@ function WheyForm(props) {
           type="number"
           value={ price[i] }
           onChange={ handlePrice }
+          required
         />
       </label>
-      <button onClick={ handleCalc }>
-        Calcular
-      </button>
+      { !comparison && <CalcButton ind={ i } />}
       {
         calculate && (
           <div>

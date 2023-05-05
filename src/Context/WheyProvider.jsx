@@ -20,36 +20,106 @@ function WheyProvider({ children }) {
     dumArr[index] = value;
     return dumArr;
   }
-
+  
+  const resetForm = (event) => {
+    const defaultState = ["", ""];
+    event.preventDefault();
+    setWeight(defaultState);
+    setServing(defaultState);
+    setProtein(defaultState);
+    setPrice(defaultState);
+    setBrand(defaultState);
+    setServingPrice(defaultState);
+    setServingQuant(defaultState);
+    setTotalProtein(defaultState);
+    setProteinConcentration(defaultState);
+    setProteinPrice(defaultState);
+    setCalculate(false);
+  }
+  
   const getServingPrice = (weight, serving, price, index) => {
-    const SP = (price * serving) / weight;
-    const newValue = updateArray(servingPrice, SP.toFixed(2), index);
-    setServingPrice(newValue);
+    if (index.length > 1) {
+      let arr = [];
+      index.map((i) => {
+        const SP = (price[i] * serving[i]) / weight[i];
+        return arr.push(SP.toFixed(2));
+      });
+      setServingPrice(arr);
+    } else {
+      const SP = (price * serving) / weight;    
+      const newValue = updateArray(servingPrice, SP.toFixed(2), index);
+      setServingPrice(newValue);
+    }
   }
 
   const getServingQuant = (weight, serving, index) => {
-    const SQ = weight / serving;
-    const newValue = updateArray(servingQuant, Math.round(SQ), index);
-    setServingQuant(newValue);
+    if (index.length > 1) {
+      let arr = [];
+      index.map((i) => {
+        const SQ = weight[i] / serving[i];
+        return arr.push(Math.round(SQ));
+      });
+      setServingQuant(arr);
+    } else {
+      const SQ = weight / serving;   
+      const newValue = updateArray(servingQuant, Math.round(SQ), index);
+      setServingQuant(newValue);
+    }
   }
 
   const getTotalProtein = (weight, serving, protein, index) => {
-    const TP = (weight / serving) * protein;
-    const newValue = updateArray(totalProtein, Math.round(TP), index);
-    setTotalProtein(newValue);
+    if (index.length > 1) {
+      let arr = []
+      index.map((i) => {
+        const TP = (weight[i] / serving[i]) * protein[i];
+        return arr.push(Math.round(TP));
+      })
+      setTotalProtein(arr);
+    } else {
+      const TP = (weight / serving) * protein;
+      const newValue = updateArray(totalProtein, Math.round(TP), index);
+      setTotalProtein(newValue);
+    }
   }
 
   const getProteinConcentration = (serving, protein, index) => {
-    const PC = (protein * 100) / serving;
-    const newValue = updateArray(proteinConcentration, PC.toFixed(1), index);
-    setProteinConcentration(newValue);
+    if (index.length > 1) {
+      let arr = []
+      index.map((i) => {
+        const PC = (protein[i] * 100) / serving[i];
+        return arr.push(PC.toFixed(1));
+      })
+      setProteinConcentration(arr);
+    } else {
+      const PC = (protein * 100) / serving;
+      const newValue = updateArray(proteinConcentration, PC.toFixed(1), index);
+      setProteinConcentration(newValue);
+    }
   }
 
   const getProteinPrice = (weight, serving, protein, price, index) => {
-    const TP = (weight / serving) * protein;
-    const PP = (Math.round(TP) * price) / weight;
-    const newValue = updateArray(proteinPrice, PP.toFixed(2), index);
-    setProteinPrice(newValue);
+    if (index.length > 1) {
+      let arr = []
+      index.map((i) => {
+        const TP = (weight[i] / serving[i]) * protein[i];
+        const PP = (Math.round(TP) * price[i]) / weight[i];
+        return arr.push(PP.toFixed(2));
+      })
+      setProteinPrice(arr);
+    } else {
+      const TP = (weight / serving) * protein;
+      const PP = (Math.round(TP) * price) / weight;
+      const newValue = updateArray(proteinPrice, PP.toFixed(2), index);
+      setProteinPrice(newValue);
+    }
+  }
+
+  const getResults = async (weight, serving, protein, price, index) => {
+    await getServingPrice(weight, serving, price, index);
+    getServingQuant(weight, serving, index);
+    getTotalProtein(weight, serving, protein, index);
+    getProteinConcentration(serving, protein, index);
+    getProteinPrice(weight, serving, protein, price, index);
   }
 
   const WheyValue = {
@@ -67,17 +137,14 @@ function WheyProvider({ children }) {
     setPrice,
     calculate,
     setCalculate,
-    getServingPrice,
     servingPrice,
-    getServingQuant,
     servingQuant,
-    getTotalProtein,
     totalProtein,
-    getProteinConcentration,
     proteinConcentration,
-    getProteinPrice,
     proteinPrice,
-    updateArray
+    updateArray,
+    resetForm,
+    getResults
   }
 
   return (
