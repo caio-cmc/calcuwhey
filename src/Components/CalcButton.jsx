@@ -29,8 +29,7 @@ function CalcButton(props) {
 
   return (
     <button onClick={ calculate ? resetForm : handleCalc }>
-    {/* <button onClick={ handleCalc }> */}
-      { calculate ? "Reset" : "Calcular" }
+      { calculate ? "Refazer" : "Calcular" }
     </button>
   );
 }

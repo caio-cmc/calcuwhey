@@ -70,54 +70,8 @@ function WheyForm(props) {
           X
         </button>
       }
-      <label>
-        Marca:
-        <input 
-          type="text"
-          value={ brand[i] }
-          onChange={ handleBrand }
-          required
-        />
-      </label>
-      <label>
-        Quantidade em gramas:
-        <input
-          type="number"
-          value={ weight[i] }
-          onChange={ handleWeight }
-          required
-        />
-      </label>
-      <label>
-        Porção em gramas:
-        <input
-          type="number"
-          value={ serving[i] }
-          onChange={ handleServing }
-          required
-        />
-      </label>
-      <label>
-        Proteína por porção:
-        <input
-          type="number"
-          value={ protein[i] }
-          onChange={ handleProtein }
-          required
-        />
-      </label>
-      <label>
-        Preço:
-        <input
-          type="number"
-          value={ price[i] }
-          onChange={ handlePrice }
-          required
-        />
-      </label>
-      { !comparison && <CalcButton ind={ i } />}
       {
-        calculate && (
+        calculate ? (
           <div>
             <p>{ `Informações do whey ${ brand[i] }:` }</p>
             <p>{ `Rende ${ servingQuant[i] } porções por embalagem` }</p>
@@ -126,7 +80,57 @@ function WheyForm(props) {
             <p>{ `Você paga R$ ${proteinPrice[i]} só por a  proteína do produto` }</p>
           </div>
         )
-      }
+       :
+        (
+          <div>
+            <label>
+              Marca:
+              <input 
+                type="text"
+                value={ brand[i] }
+                onChange={ handleBrand }
+                required
+                />
+            </label>
+            <label>
+              Quantidade em gramas:
+              <input
+                type="number"
+                value={ weight[i] }
+                onChange={ handleWeight }
+                required
+                />
+            </label>
+            <label>
+              Porção em gramas:
+              <input
+                type="number"
+                value={ serving[i] }
+                onChange={ handleServing }
+                required
+                />
+            </label>
+            <label>
+              Proteína por porção:
+              <input
+                type="number"
+                value={ protein[i] }
+                onChange={ handleProtein }
+                required
+                />
+            </label>
+            <label>
+              Preço:
+              <input
+                type="number"
+                value={ price[i] }
+                onChange={ handlePrice }
+                required
+                />
+            </label>
+          </div>
+      ) }
+      { !comparison && <CalcButton ind={ i } />}      
     </form>
   );
 }

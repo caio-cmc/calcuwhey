@@ -21,16 +21,19 @@ function MainPage() {
       </div>
       {/* descrições e informações */}
       {/* formulario de informações da proteína, usar o estado de comparação para renderizar ou não o segundo formulário */}
-      <WheyForm ind="0" />
-      {
-        comparison ? 
-          <div>
+      <div>
+        <WheyForm ind="0" />
+        {
+          comparison ? 
             <WheyForm ind="1" />
-            <CalcButton ind={["0", "1"]} />
-          </div> :
-          <button onClick={ HandleComp }>
-            Comparar
-          </button>
+            :
+            <button onClick={ HandleComp }>
+              Comparar
+            </button>
+        }
+      </div>
+      {
+        comparison && <CalcButton ind={["0", "1"]} />
       }
       {/* footer */}
     </main>
