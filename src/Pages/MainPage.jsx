@@ -5,6 +5,7 @@ import CalcButton from '../Components/CalcButton';
 import Articles from '../Components/Articles';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import "../Styles/Pages/MainPage.scss"
 
 function MainPage() {
   const { comparison, setComparison, resetForm } = useContext(WheyContext);
@@ -16,12 +17,14 @@ function MainPage() {
   }
 
   return (
-    <div>
+    <div className="entire-page">
       <main id="main" className="main-view">
         {/* header */}
         <Header />
-        <h1>WheyCulator</h1>
-        <p>Quer saber quanto custa a dose do seu whey? Qual a concentração dele? Saber qual o valor real da proteína? Comparar com outras marcas? É para isso que estamos aqui, para facilitar sua decisão e a sua vida!</p>
+        <div className="main-welcome">
+          <h1 className="main-welcome-title">WheyCulator</h1>
+          <p className="main-welcome-text">Quer saber quanto custa a dose do seu whey? Qual a concentração dele? Saber qual o valor real da proteína? Comparar com outras marcas? É para isso que estamos aqui, para facilitar sua decisão e a sua vida!</p>
+        </div>
       </main>
       {/* descrições e informações */}
       <Articles />

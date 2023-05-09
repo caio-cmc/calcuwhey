@@ -1,0 +1,21 @@
+.header-main {
+  background-color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8rem;
+  height: 8rem;
+}
+
+.header-logo {
+  height: 5rem;
+}
+
+.header-nav-links {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: red;
+  font-weight: 700;
+  font-size: 2rem;
+}
