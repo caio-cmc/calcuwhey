@@ -1,0 +1,46 @@
+.articles-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0 8rem;
+  height: 100vh;
+  background-color: green;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.text {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  width: 80%;
+}
+
+.disclaimer {
+  font-size: 1rem;
+}
+
+.article-images {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-image {
+  max-width: 25rem;
+  padding: 0.5rem;
+}
+
+.list {
+  text-align: left;
+  font-weight: bolder;
+}
