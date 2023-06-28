@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import WheyContext from "../Context/WheyContext";
+import "../Styles/Components/CalcButton.scss"
 
 function CalcButton(props) {
   const {
@@ -28,7 +29,7 @@ function CalcButton(props) {
   }
 
   return (
-    <button onClick={ calculate ? resetForm : handleCalc }>
+    <button className="form-button" onClick={ calculate ? resetForm : handleCalc }>
       { calculate ? "Refazer" : "Calcular" }
     </button>
   );

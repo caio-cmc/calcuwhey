@@ -4,16 +4,19 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8rem;
+  padding: 0;
   height: 8rem;
+  width: 100%;
+  position: fixed;
 }
 
 .header-logo {
   height: 5rem;
+  padding-left: 8rem;
 }
 
 .header-nav-links {
-  margin: 0 0.5rem;
+  padding-right: 8rem;
   text-decoration: none;
   color: red;
   font-weight: 700;

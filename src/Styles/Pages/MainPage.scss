@@ -29,3 +29,33 @@
   font-size: 2rem;
   width: 70%;
 }
+
+.main-calculator {
+  height: 100vh;
+  background-color: chocolate;
+}
+
+.main-forms {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.forms-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.compare-button {
+  width: 5rem;
+  height: 2rem;
+}
+
+.main-forms-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -114,8 +114,8 @@ function WheyProvider({ children }) {
     }
   }
 
-  const getResults = async (weight, serving, protein, price, index) => {
-    await getServingPrice(weight, serving, price, index);
+  const getResults = (weight, serving, protein, price, index) => {
+    getServingPrice(weight, serving, price, index);
     getServingQuant(weight, serving, index);
     getTotalProtein(weight, serving, protein, index);
     getProteinConcentration(serving, protein, index);

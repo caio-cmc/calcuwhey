@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import WheyContext from "../Context/WheyContext";
 import CalcButton from "./CalcButton";
+import "../Styles/Components/WheyForm.scss"
 
 function WheyForm(props) {
   const {
@@ -22,7 +23,8 @@ function WheyForm(props) {
     totalProtein,
     proteinConcentration,
     proteinPrice,
-    updateArray
+    updateArray,
+    resetForm
   } = useContext(WheyContext);
 
   const { ind } = props;
@@ -60,77 +62,90 @@ function WheyForm(props) {
 
   const closeForm = (event) => {
     event.preventDefault();
+    resetForm(event);
     setComparison(false);
   }
 
   return (
-    <form>
-      { i === 1 &&
-        <button onClick={ closeForm }>
-          X
-        </button>
-      }
-      {
-        calculate ? (
-          <div>
-            <p>{ `Informações do whey ${ brand[i] }:` }</p>
-            <p>{ `Rende ${ servingQuant[i] } porções por embalagem` }</p>
-            <p>{ `Preço por porção: R$ ${ servingPrice[i] }` }</p>
-            <p>{ `Cada embalagem possui ${ totalProtein[i] }g de proteína, tendo assim uma concentração de ${ proteinConcentration[i] }%` }</p>
-            <p>{ `Você paga R$ ${proteinPrice[i]} só por a  proteína do produto` }</p>
-          </div>
-        )
-       :
-        (
-          <div>
-            <label>
-              Marca:
-              <input 
-                type="text"
-                value={ brand[i] }
-                onChange={ handleBrand }
-                required
-                />
-            </label>
-            <label>
-              Quantidade em gramas:
-              <input
-                type="number"
-                value={ weight[i] }
-                onChange={ handleWeight }
-                required
-                />
-            </label>
-            <label>
-              Porção em gramas:
-              <input
-                type="number"
-                value={ serving[i] }
-                onChange={ handleServing }
-                required
-                />
-            </label>
-            <label>
-              Proteína por porção:
-              <input
-                type="number"
-                value={ protein[i] }
-                onChange={ handleProtein }
-                required
-                />
-            </label>
-            <label>
-              Preço:
-              <input
-                type="number"
-                value={ price[i] }
-                onChange={ handlePrice }
-                required
-                />
-            </label>
-          </div>
-      ) }
-      { !comparison && <CalcButton ind={ i } />}      
+    <form className="whey-main">
+      <div className={`whey-conditionals-${ind}`}>
+        { i === 1 &&
+          <button onClick={ closeForm } className="whey-closebtn">
+            X
+          </button>
+        }
+        {
+          calculate ? (
+            <div className="whey-info-wrap">
+              <p className="whey-info">{ `Informações do whey ${ brand[i] }:` }</p>
+              <p className="whey-info">{ `Rende ${ servingQuant[i] } porções por embalagem` }</p>
+              <p className="whey-info">{ `Preço por porção: R$ ${ servingPrice[i] }` }</p>
+              <p className="whey-info">{ `Cada embalagem possui ${ totalProtein[i] }g de proteína, tendo assim uma concentração de ${ proteinConcentration[i] }%` }</p>
+              <p className="whey-info">{ `Você paga R$ ${proteinPrice[i]} só pela proteína do produto` }</p>
+            </div>
+          )
+        :
+          (
+            <div className="whey-form-main">
+              <label className="whey-labels">
+                Marca:
+                <br />
+                <input
+                  className="whey-inputs" 
+                  type="text"
+                  value={ brand[i] }
+                  onChange={ handleBrand }
+                  required
+                  />
+              </label>
+              <label className="whey-labels">
+                Quantidade em gramas:
+                <br />
+                <input
+                  className="whey-inputs"
+                  type="number"
+                  value={ weight[i] }
+                  onChange={ handleWeight }
+                  required
+                  />
+              </label>
+              <label className="whey-labels">
+                Porção em gramas:
+                <br />
+                <input
+                  className="whey-inputs"
+                  type="number"
+                  value={ serving[i] }
+                  onChange={ handleServing }
+                  required
+                  />
+              </label>
+              <label className="whey-labels">
+                Proteína por porção:
+                <br />
+                <input
+                  className="whey-inputs"
+                  type="number"
+                  value={ protein[i] }
+                  onChange={ handleProtein }
+                  required
+                  />
+              </label>
+              <label className="whey-labels">
+                Preço:
+                <br />
+                <input
+                  className="whey-inputs"
+                  type="number"
+                  value={ price[i] }
+                  onChange={ handlePrice }
+                  required
+                  />
+              </label>
+            </div>
+        ) }
+        { !comparison && <CalcButton ind={ i } />}
+      </div>
     </form>
   );
 }

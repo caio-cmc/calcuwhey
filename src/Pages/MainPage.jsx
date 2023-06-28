@@ -29,19 +29,25 @@ function MainPage() {
       {/* descrições e informações */}
       <Articles />
       {/* formulario de informações da proteína, usar o estado de comparação para renderizar ou não o segundo formulário */}
-      <section id="calculator">
-        <WheyForm ind="0" />
-        {
-          comparison ? 
-            <WheyForm ind="1" />
-            :
-            <button onClick={ HandleComp }>
-              Comparar
-            </button>
-        }
-        {
-          comparison && <CalcButton ind={["0", "1"]} />
-        }
+      <section id="calculator" className="main-calculator">
+        <div className="main-forms">
+          <div className="forms-wrap">
+            <WheyForm ind="0" />
+            {
+              comparison ? 
+                <WheyForm ind="1" />
+                :
+                <button className="compare-button" onClick={ HandleComp }>
+                  Comparar
+                </button>
+            }
+          </div>
+          <div className="main-forms-button">
+            {
+              comparison && <CalcButton ind={["0", "1"]} />
+            }
+          </div>
+        </div>
       </section>
       {/* footer */}
       <Footer />
