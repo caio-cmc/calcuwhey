@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
-import WheyContext from '../Context/WheyContext';
-import WheyForm from '../Components/WheyForm';
-import CalcButton from '../Components/CalcButton';
-import Articles from '../Components/Articles';
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
+import React, { useContext } from "react";
+import WheyContext from "../Context/WheyContext";
+import WheyForm from "../Components/WheyForm";
+import CalcButton from "../Components/CalcButton";
+import Articles from "../Components/Articles";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
+import ArmCurl from "../Images/arm-curl.png";
 import "../Styles/Pages/MainPage.scss"
 
 function MainPage() {
@@ -22,6 +23,7 @@ function MainPage() {
         {/* header */}
         <Header />
         <div className="main-welcome">
+          <img className="main-curl fade-left" src={ ArmCurl } alt="Homem fazendo exercício de bíceps" />
           <h1 className="main-welcome-title">WheyCulator</h1>
           <p className="main-welcome-text">Quer saber quanto custa a dose do seu whey? Qual a concentração dele? Saber qual o valor real da proteína? Comparar com outras marcas? É para isso que estamos aqui, para facilitar sua decisão e a sua vida!</p>
         </div>

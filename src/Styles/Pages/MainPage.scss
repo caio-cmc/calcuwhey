@@ -1,3 +1,5 @@
+$gym: url(../../Images/gym-bg.png);
+
 .entire-page {
   display: flex;
   flex-direction: column;
@@ -7,7 +9,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: red;
+  background-image: $gym;
+  background-size: cover;
 }
 
 .main-welcome {
@@ -19,15 +22,30 @@
   margin: 0 8rem;
 }
 
+.main-curl {
+  position: absolute;
+  z-index: 1;
+  height: 80%;
+  left: -200px;
+  bottom: 0px;
+  opacity: 0.7;
+}
+
 .main-welcome-title {
   font-size: 10rem;
   margin-bottom: 1rem;
+  color: darkred;
+  text-shadow: 0 0 5px black;
+  z-index: 2;
 }
 
 .main-welcome-text {
   text-align: center;
+  color: white;
+  text-shadow: 0 0 5px black;
   font-size: 2rem;
   width: 70%;
+  z-index: 2;
 }
 
 .main-calculator {
