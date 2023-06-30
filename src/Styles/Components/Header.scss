@@ -1,5 +1,9 @@
-.header-main {
-  background-color: grey;
+.header-main-fullsize {
+  backdrop-filter: blur(15px);
+  background: rgba($color: #fff, $alpha: 0.15);
+  box-shadow: 0 0 10px 1px rgba($color: #000, $alpha: 0.35);
+  z-index: 10;
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -7,17 +11,42 @@
   padding: 0;
   height: 8rem;
   width: 100%;
+  transition: 500ms;
+
+  .header-logo {
+    height: 5rem;
+    padding-left: 8rem;
+    transition: 500ms;
+  }
 }
 
-.header-logo {
-  height: 5rem;
-  padding-left: 8rem;
+.header-main-collapsed {
+  backdrop-filter: blur(15px);
+  background: rgba($color: #fff, $alpha: 0.15);
+  box-shadow: 0 0 10px 1px rgba($color: #000, $alpha: 0.35);
+  z-index: 10;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  height: 4rem;
+  width: 100%;
+  transition: 500ms;
+
+  .header-logo {
+    height: 3rem;
+    padding-left: 8rem;
+    transition: 500ms;
+  }
+
 }
 
-.header-nav-links {
-  padding-right: 8rem;
-  text-decoration: none;
-  color: red;
-  font-weight: 700;
-  font-size: 2rem;
-}
+  .header-nav-links {
+    padding-right: 8rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 2rem;
+  }

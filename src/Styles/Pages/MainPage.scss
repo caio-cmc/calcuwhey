@@ -6,7 +6,7 @@ $gym: url(../../Images/gym-bg.png);
 }
 
 .main-view {
-  height: 100vh;
+  height: 100.1vh;
   display: flex;
   flex-direction: column;
   background-image: $gym;
@@ -27,7 +27,7 @@ $gym: url(../../Images/gym-bg.png);
   z-index: 1;
   height: 80%;
   left: -200px;
-  bottom: 0px;
+  bottom: 0;
   opacity: 0.7;
 }
 
@@ -49,7 +49,7 @@ $gym: url(../../Images/gym-bg.png);
 }
 
 .main-calculator {
-  height: 100vh;
+  height: 92vh;
   background-color: chocolate;
 }
 

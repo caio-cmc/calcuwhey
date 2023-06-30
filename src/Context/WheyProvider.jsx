@@ -14,6 +14,7 @@ function WheyProvider({ children }) {
   const [totalProtein, setTotalProtein] = useState(["", ""]);
   const [proteinConcentration, setProteinConcentration] = useState(["", ""]);
   const [proteinPrice, setProteinPrice] = useState(["", ""]);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const updateArray = (array, value, index) => {
     let dumArr = array.slice();
@@ -144,7 +145,9 @@ function WheyProvider({ children }) {
     proteinPrice,
     updateArray,
     resetForm,
-    getResults
+    getResults,
+    isScrolled,
+    setIsScrolled
   }
 
   return (

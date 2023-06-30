@@ -66,6 +66,12 @@ function WheyForm(props) {
     setComparison(false);
   }
 
+  const paragraph1 = <p className="whey-info">Informações do whey <strong>{ brand[i] }</strong>:</p>;
+  const paragraph2 = <p className="whey-info">Rende <strong>{ servingQuant[i] }</strong> porções por embalagem</p>;
+  const paragraph3 = <p className="whey-info">Preço por porção: <strong>R${ servingPrice[i] }</strong></p>;
+  const paragraph4 = <p className="whey-info">Cada embalagem possui <strong>{ totalProtein[i] }g</strong> de proteína, tendo assim uma concentração de <strong>{ proteinConcentration[i] }%</strong></p>;
+  const paragraph5 = <p className="whey-info">Você paga <strong>R${proteinPrice[i]}</strong> só pela proteína do produto</p>;
+
   return (
     <form className="whey-main">
       <div className={`whey-conditionals-${ind}`}>
@@ -77,11 +83,11 @@ function WheyForm(props) {
         {
           calculate ? (
             <div className="whey-info-wrap">
-              <p className="whey-info">{ `Informações do whey ${ brand[i] }:` }</p>
-              <p className="whey-info">{ `Rende ${ servingQuant[i] } porções por embalagem` }</p>
-              <p className="whey-info">{ `Preço por porção: R$ ${ servingPrice[i] }` }</p>
-              <p className="whey-info">{ `Cada embalagem possui ${ totalProtein[i] }g de proteína, tendo assim uma concentração de ${ proteinConcentration[i] }%` }</p>
-              <p className="whey-info">{ `Você paga R$ ${proteinPrice[i]} só pela proteína do produto` }</p>
+              { paragraph1 }
+              { paragraph2 }
+              { paragraph3 }
+              { paragraph4 }
+              { paragraph5 }
             </div>
           )
         :
