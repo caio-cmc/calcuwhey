@@ -15,21 +15,43 @@
 }
 
 .whey-closebtn {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2rem;
+  width: 2rem;
   margin-top: 2rem;
-  text-align: center;
+  background: none;
+  border: none;
+}
+
+.whey-close-img {
+  height: 2.5rem;
+  width: 2.5rem;
+  filter: invert(20%) sepia(64%) saturate(3225%) hue-rotate(346deg) brightness(82%) contrast(120%);
+  transition: 300ms;
+
+  &:hover {
+    filter: invert(100%) sepia(6%) saturate(23%) hue-rotate(113deg) brightness(106%) contrast(106%);
+    transition: 300ms;
+  }
 }
 
 .whey-info-wrap {
-  padding: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  background: rgba($color: #fff, $alpha: 0.7);
+  border-radius: 25px;
 }
 
 .whey-info {
   width: 20rem;
   font-size: larger;
+  text-align: center;
+  color: #000;
   font-weight: 500;
   padding-bottom: 1rem;
+
+  strong {
+    color: rgb(184, 7, 7);
+  }
 }
 
 .whey-form-main {
@@ -47,13 +69,25 @@
 }
 
 .whey-inputs {
+  color: #fff;
+  font-size: x-large;
+  border-style: none;
   border-radius: 20px;
   padding: 0rem 1rem;
+  margin-top: 0.5rem;
   height: 3rem;
   width: 20rem;
+  backdrop-filter: blur(15px);
+  background: rgba($color: #fff, $alpha: 0.15);
+  border: 2px solid transparent;
 
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
     -webkit-appearance: none;
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid rgb(184, 7, 7);
   }
 }

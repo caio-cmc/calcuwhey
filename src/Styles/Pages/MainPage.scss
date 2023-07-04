@@ -71,8 +71,21 @@ $scoop: url(../../Images/whey-scoop-bg.png);
 }
 
 .compare-button {
-  width: 5rem;
-  height: 2rem;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 20px;
+  font-size: x-large;
+  font-weight: 900;
+  border: 2px solid rgb(184, 7, 7);
+  color: rgb(184, 7, 7);
+  background-color: black;
+  transition: 300ms;
+
+  &:hover {
+    color: white;
+    background-color: rgb(184, 7, 7);
+    transition: 300ms;
+  }
 }
 
 .main-forms-button {

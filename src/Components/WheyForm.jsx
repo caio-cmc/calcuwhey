@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import WheyContext from "../Context/WheyContext";
 import CalcButton from "./CalcButton";
-import "../Styles/Components/WheyForm.scss"
+import closeIcon from "../Images/close-icon.svg";
+import "../Styles/Components/WheyForm.scss";
 
 function WheyForm(props) {
   const {
@@ -77,7 +78,7 @@ function WheyForm(props) {
       <div className={`whey-conditionals-${ind}`}>
         { i === 1 &&
           <button onClick={ closeForm } className="whey-closebtn">
-            X
+            <img className="whey-close-img" src={ closeIcon } alt="close button" />
           </button>
         }
         {
@@ -101,7 +102,6 @@ function WheyForm(props) {
                   type="text"
                   value={ brand[i] }
                   onChange={ handleBrand }
-                  required
                   />
               </label>
               <label className="whey-labels">
@@ -112,7 +112,6 @@ function WheyForm(props) {
                   type="number"
                   value={ weight[i] }
                   onChange={ handleWeight }
-                  required
                   />
               </label>
               <label className="whey-labels">
@@ -123,7 +122,6 @@ function WheyForm(props) {
                   type="number"
                   value={ serving[i] }
                   onChange={ handleServing }
-                  required
                   />
               </label>
               <label className="whey-labels">
@@ -134,7 +132,6 @@ function WheyForm(props) {
                   type="number"
                   value={ protein[i] }
                   onChange={ handleProtein }
-                  required
                   />
               </label>
               <label className="whey-labels">
@@ -145,7 +142,6 @@ function WheyForm(props) {
                   type="number"
                   value={ price[i] }
                   onChange={ handlePrice }
-                  required
                   />
               </label>
             </div>
