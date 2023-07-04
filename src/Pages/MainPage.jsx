@@ -31,7 +31,7 @@ function MainPage() {
         <div className="main-welcome">
           <img className="main-curl fade-left" src={ ArmCurl } alt="Homem fazendo exercício de bíceps" />
           <h1 className="main-welcome-title">WheyCulator</h1>
-          <p className="main-welcome-text">Quer saber quanto custa a dose do seu whey? Qual a concentração dele? Saber qual o valor real da proteína? Comparar com outras marcas? É para isso que estamos aqui, para facilitar sua decisão e a sua vida!</p>
+          <p className="main-welcome-text">Quer saber quanto custa a dose do seu whey? Qual a concentração dele? Saber qual o valor real da proteína? Comparar com outras marcas? É para isso que serve a WheyCulator, para facilitar sua decisão e a sua vida!</p>
         </div>
       </main>
       <div ref={ ref }>

@@ -4,7 +4,7 @@ import "../Styles/Components/Footer.scss"
 function Footer() {
   return (
     <footer className="footer-main">
-      <p>
+      <p className="footer-author">
         Feito por
           <a className="footer-caio" href="https://github.com/caio-cmc" target="_blank" rel="noreferrer">
             <strong> Caio César</strong>

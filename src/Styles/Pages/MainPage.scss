@@ -1,4 +1,5 @@
 $gym: url(../../Images/gym-bg.png);
+$scoop: url(../../Images/whey-scoop-bg.png);
 
 .entire-page {
   display: flex;
@@ -50,7 +51,9 @@ $gym: url(../../Images/gym-bg.png);
 
 .main-calculator {
   height: 92vh;
-  background-color: chocolate;
+  background-image: $scoop;
+  background-size: cover;
+  background-position: center;
 }
 
 .main-forms {
