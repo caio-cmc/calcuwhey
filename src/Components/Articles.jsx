@@ -19,10 +19,10 @@ function Articles() {
           <img className="article-image" src={ Tabela } alt="Tabela nutricional de whey protein" />
         </div>
         <ol className="list">
-          <li>Peso total da embalagem (em gramas)</li>
-          <li>Peso de cada porção</li>
-          <li>Quantidade de proteína por porção</li>
-          <li>Pesquisar o preço na sua loja de confiança</li>
+          <li className="list-text">Peso total da embalagem (em gramas)</li>
+          <li className="list-text">Peso de cada porção</li>
+          <li className="list-text">Quantidade de proteína por porção</li>
+          <li className="list-text">Pesquisar o preço na sua loja de confiança</li>
         </ol>
       </aside>
     </section>

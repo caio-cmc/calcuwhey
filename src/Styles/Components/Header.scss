@@ -22,7 +22,7 @@
 
 .header-main-collapsed {
   backdrop-filter: blur(15px);
-  background: rgba($color: #fff, $alpha: 0.15);
+  background: rgba($color: #fff, $alpha: 0.3);
   box-shadow: 0 0 10px 1px rgba($color: #000, $alpha: 0.35);
   z-index: 10;
   position: fixed;
@@ -46,7 +46,15 @@
   .header-nav-links {
     padding-right: 8rem;
     text-decoration: none;
-    color: black;
+    color: rgb(184, 7, 7);
+    text-shadow: 0 0 5px black;
     font-weight: 700;
     font-size: 2rem;
+    transition: 200ms;
+
+    &:hover {
+      color: #000;
+      text-shadow: 0 0 5px transparent;
+      transition: 200ms;
+    }
   }
