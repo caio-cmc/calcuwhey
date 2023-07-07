@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import WheyContext from "../Context/WheyContext";
-import Icon from "../Images/icon.png"
+import CalcuwheyLogo from "../Images/Calcuwhey-logo.png"
 import "../Styles/Components/Header.scss"
 
 function Header() {
@@ -9,7 +9,7 @@ function Header() {
   return (
     <header className={ isScrolled ? "header-main-collapsed" : "header-main-fullsize" }>
       <a href="#main">
-        <img className="header-logo" src={ Icon } alt="Wheyculator logo" />
+        <img className="header-logo" src={ CalcuwheyLogo } alt="Calcuwhey logo" />
       </a>
       <nav className="header-nav">
         <a className="header-nav-links" href="#howto">

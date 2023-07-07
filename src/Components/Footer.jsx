@@ -10,7 +10,7 @@ function Footer() {
             <strong> Caio César</strong>
           </a> em 2023
       </p>
-      <p className="footer-disclaimer"><strong>Atenção: </strong>A WheyCulator não está aqui para dizer qual a melhor marca de whey do mercado, apenas para comparar as quantidades de proteína em suas composições. Procure sempre a opinião de um profissional qualificado.</p>
+      <p className="footer-disclaimer"><strong>Atenção: </strong>A CalcuWhey não está aqui para dizer qual a melhor marca de whey do mercado, apenas para comparar as quantidades de proteína em suas composições. Procure sempre a opinião de um profissional qualificado.</p>
     </footer>
   )
 }

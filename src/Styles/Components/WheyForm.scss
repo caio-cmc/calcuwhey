@@ -50,7 +50,7 @@
   padding-bottom: 1rem;
 
   strong {
-    color: rgb(184, 7, 7);
+    color: #8b1313;
   }
 }
 
@@ -64,8 +64,8 @@
   font-size: xx-large;
   text-align: center;
   font-weight: 900;
-  color: rgb(184, 7, 7);
-  text-shadow: 0 0 5px black;
+  color: #8b1313;
+  text-shadow: 0 0 5px #000;
   padding-bottom: 0.5rem;
 }
 
@@ -89,6 +89,6 @@
 
   &:focus {
     outline: none;
-    border: 2px solid rgb(184, 7, 7);
+    border: 2px solid #bf1515;
   }
 }

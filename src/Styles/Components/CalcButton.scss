@@ -4,14 +4,15 @@
   border-radius: 20px;
   font-size: x-large;
   font-weight: 900;
-  border: 2px solid rgb(184, 7, 7);
-  color: rgb(184, 7, 7);
-  background-color: black;
+  border: 2px solid #8b1313;
+  color: #8b1313;
+  background-color: #000;
   transition: 300ms;
 
   &:hover {
-    color: white;
-    background-color: rgb(184, 7, 7);
+    background-color: #bf1515;
+    border: 2px solid #bf1515;
+    color: #fff;
     transition: 300ms;
   }
 }

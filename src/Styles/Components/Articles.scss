@@ -4,7 +4,7 @@
   justify-content: space-evenly;
   padding: 0 8rem;
   min-height: 100vh;
-  background-color: black;
+  background-color: #000;
   overflow: auto;
 }
 
@@ -19,18 +19,19 @@
 
 .title {
   font-size: 2.5rem;
-  color: rgb(184, 7, 7);
+  color: #8b1313;
 }
 
 .text {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   width: 80%;
-  color: white
+  color: #fff;
 }
 
 .disclaimer {
   font-size: 1rem;
+  margin-bottom: 5rem;
 }
 
 .article-images {
@@ -49,5 +50,14 @@
 }
 
 .list-text {
-  color: white;
+  color: #fff;
+}
+
+.shortcut {
+  text-decoration: none;
+  color: #8b1313;
+
+  span{
+    color: #fff;
+  }
 }

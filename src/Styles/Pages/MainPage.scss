@@ -33,17 +33,22 @@ $scoop: url(../../Images/whey-scoop-bg.png);
 }
 
 .main-welcome-title {
-  font-size: 10rem;
+  font-size: 9rem;
   margin-bottom: 1rem;
-  color: darkred;
-  text-shadow: 0 0 5px black;
+  color: #8b1313;
+  text-shadow: 0 0 5px #000;
   z-index: 2;
+
+  span {
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+  }
 }
 
 .main-welcome-text {
   text-align: center;
-  color: white;
-  text-shadow: 0 0 5px black;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
   font-size: 2rem;
   width: 70%;
   z-index: 2;
@@ -79,14 +84,15 @@ $scoop: url(../../Images/whey-scoop-bg.png);
   border-radius: 20px;
   font-size: x-large;
   font-weight: 900;
-  border: 2px solid rgb(184, 7, 7);
-  color: rgb(184, 7, 7);
-  background-color: black;
+  border: 2px solid #8b1313;
+  color: #8b1313;
+  background-color: #000;
   transition: 300ms;
 
   &:hover {
-    color: white;
-    background-color: rgb(184, 7, 7);
+    color: #fff;
+    border: 2px solid #bf1515;
+    background-color: #bf1515;
     transition: 300ms;
   }
 }

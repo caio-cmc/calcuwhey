@@ -5,23 +5,23 @@
   align-items: center;
   justify-content: space-between;
   padding: 0rem 8rem;
-  background-color: black;
+  background-color: #000;
 }
 
 .footer-author {
-  color: white;
+  color: #fff;
 }
 
 .footer-caio {
   text-decoration: none;
-  color: white;
+  color: #fff;
 
   &:hover {
-    color: red;
+    color: #bf1515;
   }
 }
 
 .footer-disclaimer {
   width: 35%;
-  color: white;
+  color: #fff;
 }
