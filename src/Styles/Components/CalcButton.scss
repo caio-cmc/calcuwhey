@@ -15,4 +15,11 @@
     color: #fff;
     transition: 300ms;
   }
+
+  &:disabled {
+    background-color: #000;
+    border: 2px solid #cdc4c4;
+    color: #cdc4c4;
+    transition: 300ms;
+  }
 }

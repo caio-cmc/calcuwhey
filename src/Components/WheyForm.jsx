@@ -76,7 +76,7 @@ function WheyForm(props) {
   return (
     <form className="whey-main">
       <div className={`whey-conditionals-${ind}`}>
-        { i === 1 &&
+        { (i === 1 && !calculate) &&
           <button onClick={ closeForm } className="whey-closebtn">
             <img className="whey-close-img" src={ closeIcon } alt="close button" />
           </button>
@@ -105,7 +105,7 @@ function WheyForm(props) {
                   />
               </label>
               <label className="whey-labels">
-                Quantidade em gramas:
+                Peso total em gramas:
                 <br />
                 <input
                   className="whey-inputs"

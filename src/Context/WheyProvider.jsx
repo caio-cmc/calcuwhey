@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import WheyContext from "./WheyContext";
 
 function WheyProvider({ children }) {
@@ -15,6 +15,29 @@ function WheyProvider({ children }) {
   const [proteinConcentration, setProteinConcentration] = useState(["", ""]);
   const [proteinPrice, setProteinPrice] = useState(["", ""]);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  useEffect(() => {
+    const buttonEnabler = () => {
+      const indexes = [0, 1];
+      if (comparison) {
+        indexes.map((i) => {
+          if (brand[i] && weight[i] && serving[i] && protein[i] && price[i])  {
+            return setIsDisabled(false);
+          } else {
+            return setIsDisabled(true);
+          }
+        })
+      } else {
+        if (brand[0] && weight[0] && serving[0] && protein[0] && price[0])  {
+          return setIsDisabled(false);
+        } else {
+          return setIsDisabled(true);
+        }
+      }
+    }
+    buttonEnabler();
+  }, [brand, weight, serving, protein, price, comparison]);
 
   const updateArray = (array, value, index) => {
     let dumArr = array.slice();
@@ -147,7 +170,8 @@ function WheyProvider({ children }) {
     resetForm,
     getResults,
     isScrolled,
-    setIsScrolled
+    setIsScrolled,
+    isDisabled
   }
 
   return (

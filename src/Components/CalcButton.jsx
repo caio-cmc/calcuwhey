@@ -12,7 +12,8 @@ function CalcButton(props) {
     calculate,
     setCalculate,
     resetForm,
-    getResults
+    getResults,
+    isDisabled
   } = useContext(WheyContext);
 
   const { ind } = props;
@@ -29,7 +30,7 @@ function CalcButton(props) {
   }
 
   return (
-    <button className="form-button" onClick={ calculate ? resetForm : handleCalc }>
+    <button className="form-button" onClick={ calculate ? resetForm : handleCalc } disabled={ isDisabled }>
       { calculate ? "Refazer" : "Calcular" }
     </button>
   );
