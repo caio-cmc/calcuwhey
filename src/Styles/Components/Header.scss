@@ -46,15 +46,15 @@
   .header-nav-links {
     margin-right: 8rem;
     text-decoration: none;
-    color: #bf1515;
-    text-shadow: 0 0 5px black;
+    text-shadow: 0 0 3px black;
+    color: #8b1313;
     font-weight: 700;
     font-size: 2rem;
     transition: 200ms;
     
     &:hover {
       text-shadow: 0 0 5px black;
-      color: #8b1313;
+      color: #bf1515;
       transition: 200ms;
     }
   }

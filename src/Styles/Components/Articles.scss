@@ -18,7 +18,9 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-weight: 100;
+  font-family: 'Russo One', sans-serif;
   color: #8b1313;
 }
 
@@ -31,7 +33,6 @@
 
 .disclaimer {
   font-size: 1rem;
-  margin-bottom: 5rem;
 }
 
 .article-images {
@@ -47,6 +48,7 @@
 .list {
   text-align: left;
   font-weight: bolder;
+  margin-bottom: 2rem;
 }
 
 .list-text {
@@ -55,9 +57,11 @@
 
 .shortcut {
   text-decoration: none;
+  font-family: 'Russo One', sans-serif;
   color: #8b1313;
 
   span{
+    font-family: 'Russo One', sans-serif;
     color: #fff;
   }
 }

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 $gym: url(../../Images/gym-bg.png);
 $scoop: url(../../Images/whey-scoop-bg.png);
 
@@ -33,22 +34,23 @@ $scoop: url(../../Images/whey-scoop-bg.png);
 }
 
 .main-welcome-title {
+  font-family: 'Russo One', sans-serif;
   font-size: 9rem;
-  margin-bottom: 1rem;
   color: #8b1313;
-  text-shadow: 0 0 5px #000;
+  text-shadow: 0 0 50px #000;
   z-index: 2;
 
   span {
     color: #fff;
-    text-shadow: 0 0 5px #000;
+    text-shadow: 0 0 50px #000;
   }
 }
 
 .main-welcome-text {
   text-align: center;
+  font-weight: 900;
   color: #fff;
-  text-shadow: 0 0 5px #000;
+  text-shadow: 2px 2px 5px #000;
   font-size: 2rem;
   width: 70%;
   z-index: 2;
@@ -79,11 +81,11 @@ $scoop: url(../../Images/whey-scoop-bg.png);
 }
 
 .compare-button {
+  font-family: 'Russo One', sans-serif;
   width: 8rem;
   height: 3rem;
   border-radius: 20px;
   font-size: x-large;
-  font-weight: 900;
   border: 2px solid #8b1313;
   color: #8b1313;
   background-color: #000;
