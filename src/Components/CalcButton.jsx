@@ -30,7 +30,7 @@ function CalcButton(props) {
   }
 
   return (
-    <button className="form-button" onClick={ calculate ? resetForm : handleCalc } disabled={ isDisabled }>
+    <button data-testid="calculate-button-test" className="form-button" onClick={ calculate ? resetForm : handleCalc } disabled={ isDisabled }>
       { calculate ? "Refazer" : "Calcular" }
     </button>
   );

@@ -50,7 +50,7 @@ function MainPage() {
                 comparison ? 
                   <WheyForm ind="1" />
                   :
-                  <button className="compare-button" onClick={ HandleComp }>
+                  <button data-testid="compare-test" className="compare-button" onClick={ HandleComp }>
                     Comparar
                   </button>
               }

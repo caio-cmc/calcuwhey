@@ -67,17 +67,17 @@ function WheyForm(props) {
     setComparison(false);
   }
 
-  const paragraph1 = <p className="whey-info">Informações do whey <strong>{ brand[i] }</strong>:</p>;
-  const paragraph2 = <p className="whey-info">Rende <strong>{ servingQuant[i] }</strong> porções por embalagem</p>;
-  const paragraph3 = <p className="whey-info">Preço por porção: <strong>R${ servingPrice[i] }</strong></p>;
-  const paragraph4 = <p className="whey-info">Cada embalagem possui <strong>{ totalProtein[i] }g</strong> de proteína, tendo assim uma concentração de <strong>{ proteinConcentration[i] }%</strong></p>;
-  const paragraph5 = <p className="whey-info">Você paga <strong>R${proteinPrice[i]}</strong> só pela proteína do produto</p>;
+  const paragraph1 = <p data-testid={ `br-info-test-${ ind }` } className="whey-info">Informações do whey <strong>{ brand[i] }</strong>:</p>;
+  const paragraph2 = <p data-testid={ `sq-info-test-${ ind }` } className="whey-info">Rende <strong>{ servingQuant[i] }</strong> porções por embalagem</p>;
+  const paragraph3 = <p data-testid={ `sp-info-test-${ ind }` } className="whey-info">Preço por porção: <strong>R${ servingPrice[i] }</strong></p>;
+  const paragraph4 = <p data-testid={ `tp-info-test-${ ind }` } className="whey-info">Cada embalagem possui <strong>{ totalProtein[i] }g</strong> de proteína, tendo assim uma concentração de <strong>{ proteinConcentration[i] }%</strong></p>;
+  const paragraph5 = <p data-testid={ `pp-info-test-${ ind }` } className="whey-info">Você paga <strong>R${proteinPrice[i]}</strong> só pela proteína do produto</p>;
 
   return (
-    <form className="whey-main">
+    <form data-testid={ `form-test-${ ind }` } className="whey-main">
       <div className={`whey-conditionals-${ind}`}>
         { (i === 1 && !calculate) &&
-          <button onClick={ closeForm } className="whey-closebtn">
+          <button data-testid="close-button-test" onClick={ closeForm } className="whey-closebtn">
             <img className="whey-close-img" src={ closeIcon } alt="close button" />
           </button>
         }
@@ -93,11 +93,12 @@ function WheyForm(props) {
           )
         :
           (
-            <div className="whey-form-main">
+            <div data-testid={ `form-main-test-${ind}` } className="whey-form-main">
               <label className="whey-labels">
                 Marca:
                 <br />
                 <input
+                  data-testid={ `brand-input-test-${ind}` }
                   className="whey-inputs" 
                   type="text"
                   value={ brand[i] }
@@ -108,6 +109,7 @@ function WheyForm(props) {
                 Peso total em gramas:
                 <br />
                 <input
+                  data-testid={ `weight-input-test-${ind}` }
                   className="whey-inputs"
                   type="number"
                   value={ weight[i] }
@@ -118,6 +120,7 @@ function WheyForm(props) {
                 Porção em gramas:
                 <br />
                 <input
+                  data-testid={ `serving-input-test-${ind}` }
                   className="whey-inputs"
                   type="number"
                   value={ serving[i] }
@@ -128,6 +131,7 @@ function WheyForm(props) {
                 Proteína por porção:
                 <br />
                 <input
+                  data-testid={ `protein-input-test-${ind}` }
                   className="whey-inputs"
                   type="number"
                   value={ protein[i] }
@@ -138,6 +142,7 @@ function WheyForm(props) {
                 Preço:
                 <br />
                 <input
+                  data-testid={ `price-input-test-${ind}` }
                   className="whey-inputs"
                   type="number"
                   value={ price[i] }
