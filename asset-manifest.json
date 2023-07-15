@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/calcuwhey/static/css/main.33502902.css",
+    "main.js": "/calcuwhey/static/js/main.4f7f5611.js",
+    "static/media/gym-bg.png": "/calcuwhey/static/media/gym-bg.71db2c052562e8d56b80.png",
+    "static/media/whey-scoop-bg.png": "/calcuwhey/static/media/whey-scoop-bg.1787c5202a74bff48859.png",
+    "static/media/whey.png": "/calcuwhey/static/media/whey.d696520385c1399a1d4f.png",
+    "static/media/arm-curl.png": "/calcuwhey/static/media/arm-curl.233859308ffb381ef7ca.png",
+    "static/media/tabela.png": "/calcuwhey/static/media/tabela.c6f4f67599b8843410df.png",
+    "static/media/close-icon.svg": "/calcuwhey/static/media/close-icon.c39ccb73e95d4c6da2e8a22151f162fd.svg",
+    "index.html": "/calcuwhey/index.html",
+    "main.33502902.css.map": "/calcuwhey/static/css/main.33502902.css.map",
+    "main.4f7f5611.js.map": "/calcuwhey/static/js/main.4f7f5611.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33502902.css",
+    "static/js/main.4f7f5611.js"
+  ]
+}
