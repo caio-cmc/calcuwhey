@@ -15,6 +15,9 @@
 }
 
 .whey-closebtn {
+  @media (max-width: 768px) {
+    position: absolute;
+  }
   height: 2rem;
   width: 2rem;
   margin-top: 2rem;
