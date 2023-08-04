@@ -30,8 +30,8 @@ function MainPage() {
         <Header />
         <div className="main-welcome">
           <img className="main-curl fade-left" src={ ArmCurl } alt="Homem fazendo exercício de bíceps" />
-          <h1 className="main-welcome-title"><span>CALCU</span>WHEY</h1>
-          <p className="main-welcome-text">
+          <h1 className="main-welcome-title fade-in-2"><span>CALCU</span>WHEY</h1>
+          <p className="main-welcome-text fade-in-3">
             Quer saber quanto custa a dose do seu whey? Qual a concentração dele? Saber qual o valor real da proteína? Comparar com outras marcas?
             <br />
             Aqui está a CalcuWhey! Para facilitar sua decisão e a sua vida!
