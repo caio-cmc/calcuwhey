@@ -1,7 +1,33 @@
+// .form-button {
+//   @media (max-width: 820px) {
+//     margin-bottom: 1rem;
+//   }
+//   font-family: 'Russo One', sans-serif;
+//   width: 8rem;
+//   height: 3rem;
+//   border-radius: 20px;
+//   font-size: x-large;
+//   border: 2px solid #8b1313;
+//   color: #8b1313;
+//   background-color: #000;
+//   transition: 300ms;
+
+//   &:hover {
+//     background-color: #bf1515;
+//     border: 2px solid #bf1515;
+//     color: #fff;
+//     transition: 300ms;
+//   }
+
+//   &:disabled {
+//     background-color: #000;
+//     border: 2px solid #cdc4c4;
+//     color: #cdc4c4;
+//     transition: 300ms;
+//   }
+// }
+
 .form-button {
-  @media (max-width: 768px) {
-    margin-bottom: 1rem;
-  }
   font-family: 'Russo One', sans-serif;
   width: 8rem;
   height: 3rem;
@@ -11,6 +37,7 @@
   color: #8b1313;
   background-color: #000;
   transition: 300ms;
+  margin-bottom: 1rem;
 
   &:hover {
     background-color: #bf1515;

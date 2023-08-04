@@ -1,29 +1,99 @@
+// .articles-main {
+//   @media (max-width: 820px) {
+//     align-items: center;
+//     flex-direction: column;
+//     padding: 20px;
+//   }
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-evenly;
+//   padding: 0 8rem;
+//   min-height: 100vh;
+//   background-color: #000;
+//   overflow: auto;
+// }
+
+// .article {
+//   @media (max-width: 820px) {
+//     width: 90%;
+//     padding-bottom: 1rem;
+//   }
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   width: 50%;
+//   text-align: center;
+// }
+
+// .title {
+//   font-size: 2rem;
+//   font-weight: 100;
+//   font-family: 'Russo One', sans-serif;
+//   color: #8b1313;
+// }
+
+// .text {
+//   font-size: 1.5rem;
+//   margin-top: 0.5rem;
+//   width: 80%;
+//   color: #fff;
+// }
+
+// .disclaimer {
+//   font-size: 1rem;
+// }
+
+// .article-images {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .article-image {
+//   max-width: 25rem;
+//   padding: 0.5rem;
+// }
+
+// .list {
+//   text-align: left;
+//   font-weight: bolder;
+//   margin-bottom: 2rem;
+// }
+
+// .list-text {
+//   color: #fff;
+// }
+
+// .shortcut {
+//   text-decoration: none;
+//   font-family: 'Russo One', sans-serif;
+//   color: #8b1313;
+
+//   span{
+//     font-family: 'Russo One', sans-serif;
+//     color: #fff;
+//   }
+// }
+
 .articles-main {
-  @media (max-width: 768px) {
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-  }
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
-  padding: 0 8rem;
+  padding: 20px;
   min-height: 100vh;
   background-color: #000;
   overflow: auto;
 }
 
 .article {
-  @media (max-width: 768px) {
-    width: 90%;
-    padding-bottom: 1rem;
-  }
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 90%;
   text-align: center;
+  padding-bottom: 1rem;
 }
 
 .title {
@@ -47,6 +117,7 @@
 .article-images {
   display: flex;
   flex-direction: column;
+  max-width: 95vw;
 }
 
 .article-image {
